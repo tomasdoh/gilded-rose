@@ -21,12 +21,22 @@ describe("Gilded Rose - ", () => {
         expect(items[0].quality).toEqual(49);
       });
 
+<<<<<<< HEAD
     describe("Edge cases: ", () => {
       it("if sell-in date passes, the quality degrades twice as fast", () => {
         const gildedRose = new Shop([ new Item("cheese", -1, 20) ]);
         const items = gildedRose.updateQuality();
         expect(items[0].quality).toEqual(18);
       });
+=======
+  describe("Edge cases: ", () => {
+    it("if sell-in date passes, the quality degrades twice as fast", () => {
+      const gildedRose = new Shop([ new Item("cheese", -1, 20) ]);
+      const items = gildedRose.updateQuality();
+      expect(items[0].quality).toEqual(18);
+    })
+  })
+>>>>>>> 84294a64824ed1c5df0a3b0e135c9e79a908ec29
 
       it("'Aged Brie' increases in value the older it gets", () => {
         const gildedRose = new Shop([ new Item("Aged Brie", 5, 20) ]);
