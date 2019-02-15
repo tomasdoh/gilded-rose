@@ -1,7 +1,7 @@
 const { Shop, Item } = require('../src/gilded_rose.js');
-describe("Gilded Rose -", () => {
+describe("Gilded Rose - ", () => {
 
-  describe("Normal items:", () => {
+  describe("Normal items: ", () => {
     it("quality and sell-in date should lower by one", () => {
       const gildedRose = new Shop([ new Item("cheese", 10, 10) ]);
       const items = gildedRose.updateQuality();
@@ -9,10 +9,18 @@ describe("Gilded Rose -", () => {
       expect(items[0].quality).toEqual(9);
     });
 
-    it("the quality of an item can't be negative", () => {
+    it("an item's quality can't be negative", () => {
       const gildedRose = new Shop([ new Item("cheese", 0, 0) ]);
       const items = gildedRose.updateQuality();
       expect(items[0].quality).not.toEqual(-1);
-    })
+    });
+
+    it("an item's quality can't exceed 50", () => {
+      const gildedRose = new Shop([ new Item("cheese", 100, 50) ]);
+      const items = gildedRose.updateQuality();
+      expect(items[0].quality).toEqual(49);
+    });
+
+
   });
 });
