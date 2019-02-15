@@ -21,6 +21,15 @@ describe("Gilded Rose - ", () => {
       expect(items[0].quality).toEqual(49);
     });
 
+  describe("Edge cases: ", () => {
+    it("if sell-in date passes, the quality degrades twice as fast", () => {
+      const gildedRose = new Shop([ new Item("cheese", -1, 20) ]);
+      const items = gildedRose.updateQuality();
+      expect(items[0].quality).toEqual(18);
+    });
+
+
+  });
 
   });
 });
