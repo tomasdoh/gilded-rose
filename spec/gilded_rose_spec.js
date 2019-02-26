@@ -23,6 +23,15 @@ describe("Gilded Rose -", () => {
     });
   });
 
+  describe("Conjured items:", () => {
+    it("degrades twice as fast as normal items", () => {
+      const shop = new Shop([ new Item("conjured cheese", 10, 10), new Item("conjured Aged Brie", 10, 10)]);
+      const items = shop.updateQuality();
+      expect(items[0].quality).toEqual(8);
+      expect(items[1].quality).toEqual(12);
+    })
+  })
+
   describe("Edge cases:", () => {
     it("if sell-in date passes, the quality degrades twice as fast", () => {
       const shop = new Shop([ new Item("cheese", -1, 20) ]);
