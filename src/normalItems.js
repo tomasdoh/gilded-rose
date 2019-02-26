@@ -14,6 +14,8 @@ class NormalItems {
   qualityReduce() {
     if (this.canDegrade() && this.pastSellIn()) {
       this.item.quality += (this.qualityDegradeRate() - 1)
+    } else if (this.canDegrade() && this.isConjured()) {
+      this.item.quality += (this.qualityDegradeRate() * 2)
     } else if (this.canDegrade()) {
       this.item.quality += this.qualityDegradeRate()
     }
@@ -38,6 +40,10 @@ class NormalItems {
 
   qualityDegradeRate() {
     return -1
+  }
+
+  isConjured() {
+    return this.item.name.includes('conjured');
   }
 
 };

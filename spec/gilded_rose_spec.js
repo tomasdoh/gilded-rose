@@ -64,7 +64,7 @@ describe("Gilded Rose -", () => {
     });
 
     it("'Backstage passes' quality drops to 0 when concert is over", () => {
-      const shop = new Shop([ new Item("Backstage passes to a TAFKAL80ETC concert", -1, 10) ]);
+      const shop = new Shop([ new Item("Backstage passes to a TAFKAL80ETC concert", 0, 10) ]);
       const items = shop.updateQuality();
       expect(items[0].quality).toEqual(0);
     });
