@@ -5,3 +5,5 @@ class Item {
     this.quality = quality;
   }
 }
+
+module.exports = Item;
