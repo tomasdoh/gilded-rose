@@ -13,9 +13,9 @@ class NormalItems {
 
   qualityReduce() {
     if (this.canDegrade() && this.pastSellIn()) {
-      this.item.quality -= 2
+      this.item.quality -= (this.qualityDegradeRate() + 1)
     } else if (this.canDegrade()) {
-      this.item.quality -= 1
+      this.item.quality -= this.qualityDegradeRate()
     }
   }
 
@@ -34,6 +34,10 @@ class NormalItems {
       && this.item.quality >= this.MIN_QUALITY) {
         return true
     }
+  }
+
+  qualityDegradeRate() {
+    return 1
   }
 
 };

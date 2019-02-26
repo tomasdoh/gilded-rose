@@ -1,4 +1,5 @@
-const NormalItems = require('./normalItems')
+const NormalItems = require('./normalItems');
+const AgedBrie = require('./agedBrie');
 
 class Shop {
   constructor(items=[]){
@@ -6,8 +7,12 @@ class Shop {
   }
   updateQuality() {
     this.items.forEach((item) => {
+      if(item.name.includes('Aged Brie')){
+        return new AgedBrie(item).degrade()
+      } else {
       return new NormalItems(item).degrade()
-    })
+    }
+  });
 
 
     // this.items.forEach((item) => {
