@@ -1,7 +1,7 @@
-const NormalItems = require('./normalItems');
-const AgedBrie = require('./agedBrie');
-const BackstagePasses = require('./backstagePasses')
-const Sulfuras = require('./sulfuras');
+const NormalItems = require('./items/normalItems');
+const AgedBrie = require('./items/agedBrie');
+const BackstagePasses = require('./items/backstagePasses')
+const Sulfuras = require('./items/sulfuras');
 
 class Shop {
   constructor(items=[]){
