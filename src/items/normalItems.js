@@ -46,6 +46,6 @@ class NormalItems {
     return this.item.name.includes('conjured');
   }
 
-};
+}
 
  module.exports = NormalItems;
